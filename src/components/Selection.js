@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Selection = ({ selectedColor }) => {
-  const [boxStyle, setBoxStyle] = useState({
-    backgroundColor: selectedColor,
-  });
+  const [boxStyle, setBoxStyle] = useState({});
+
+  useEffect(() => {
+    setBoxStyle({
+      backgroundColor: selectedColor,
+    });
+  }, [selectedColor]);
 
   const handleClick = () => {
     setBoxStyle({
@@ -13,13 +17,28 @@ const Selection = ({ selectedColor }) => {
 
   return (
     <div>
-      <div className="fix-box" style={boxStyle} onClick={handleClick}>
+      <div
+        className="fix-box"
+        style={boxStyle}
+        onClick={handleClick}
+        data-testid={selectedColor}
+      >
         Click to select this color
       </div>
-      <div className="fix-box" style={boxStyle} onClick={handleClick}>
+      <div
+        className="fix-box"
+        style={boxStyle}
+        onClick={handleClick}
+        data-testid={selectedColor}
+      >
         Click to select this color
       </div>
-      <div className="fix-box" style={boxStyle} onClick={handleClick}>
+      <div
+        className="fix-box"
+        style={boxStyle}
+        onClick={handleClick}
+        data-testid={selectedColor}
+      >
         Click to select this color
       </div>
     </div>
