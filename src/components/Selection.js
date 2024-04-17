@@ -9,35 +9,26 @@ const Selection = ({ selectedColor }) => {
     });
   }, [selectedColor]);
 
-  const handleClick = () => {
-    setBoxStyle({
-      backgroundColor: selectedColor,
-    });
-  };
-
   return (
     <div>
       <div
         className="fix-box"
         style={boxStyle}
-        onClick={handleClick}
-        data-testid={selectedColor}
+        data-testid={`box-${selectedColor}`}
       >
         Click to select this color
       </div>
       <div
         className="fix-box"
         style={boxStyle}
-        onClick={handleClick}
-        data-testid={selectedColor}
+        data-testid={`box-${selectedColor}`}
       >
         Click to select this color
       </div>
       <div
         className="fix-box"
         style={boxStyle}
-        onClick={handleClick}
-        data-testid={selectedColor}
+        data-testid={`box-${selectedColor}`}
       >
         Click to select this color
       </div>

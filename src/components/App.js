@@ -12,7 +12,7 @@ const App = () => {
   return (
     <div>
       <ColourSelector
-        colors={['red', 'green', 'blue']}
+        colors={['blue', 'orange', 'green']}
         onColorChange={handleColorChange}
       />
       <Selection selectedColor={selectedColor} />
