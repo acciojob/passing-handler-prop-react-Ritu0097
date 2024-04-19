@@ -1,37 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from "react";
+import "./child.css";
 
-const Selection = ({ selectedColor }) => {
-  const [boxStyle, setBoxStyle] = useState({});
-
-  useEffect(() => {
-    setBoxStyle({
-      backgroundColor: selectedColor,
-    });
-  }, [selectedColor]);
+const Selection = ({ applyColor }) => {
+  const bg = useState({ background: "" })[0];
 
   return (
-    <div>
-      <div
-        className="fix-box"
-        style={boxStyle}
-        data-testid={`box-${selectedColor}`}
-      >
-        Click to select this color
-      </div>
-      <div
-        className="fix-box"
-        style={boxStyle}
-        data-testid={`box-${selectedColor}`}
-      >
-        Click to select this color
-      </div>
-      <div
-        className="fix-box"
-        style={boxStyle}
-        data-testid={`box-${selectedColor}`}
-      >
-        Click to select this color
-      </div>
+    <div className="fix-box" style={bg} onClick={applyColor}>
+      <h2 className="subheading">Selection</h2>
     </div>
   );
 };
