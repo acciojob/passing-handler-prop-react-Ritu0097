@@ -1,8 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './child.css'
 
-const Selection = ({ applyColor }) => {
-  const bg = useState({ background: '' })[0]
+const Selection = ({ applyColor, nextBackground }) => {
+  const [bg, setBg] = useState({ background: '' })
+
+  useEffect(() => {
+    setBg(nextBackground)
+  }, [nextBackground])
 
   return (
     <div
